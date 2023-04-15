@@ -44,7 +44,7 @@ Base type - Movie
   
 - Constructors:
   - C1: It has a parameter for each basic property of the type.
-  - C2: It creates an object of type Movie with the following parameters: String title, String director.
+  - C2: It creates an object of the type Movie with the following parameters: String title, String director.
   
 - Constraints:
   - R1: The movie must have a title (title != null).
@@ -54,5 +54,33 @@ Base type - Movie
 - Criterion of natural order: By release date, title and director.
 
 - Auxiliary types:
-  - Language, enumerate. Can take the values: Dutch, English, French, Indonesian, Japanese, Malay, Mandarin, Minangkabau.
+  - Language, enumerate. Can take the values: DUTCH, ENGLISH, INDONESIAN, MINANGKABAU.
   - Sinopsis, class. It has two properties: description (type String) and genre (type String), both consultable.
+
+Factory - FactoryMovie
+  
+Factory class to construct objects of type Movies.
+- Movies readMovies(String file): It creates an object of type Movies with the data stored in the csv file.
+- Movie parseMovie(String line): It receives a String line of the csv and returns an object of type Movie with the data from the String.
+
+Container type - Movies
+- Properties:
+  - movies, type List<Movie>, consultable. List of movies.
+  - number of movies, type Integer, consultable. Number of movies in the container.
+
+- Constructors:
+  - C1: Creates an object of the type Movies without any movie stored.
+  - C2: Constructor with a type Collection<Movie> as a parameter. It creates an object of the type Movies with the movies included in the given collection.
+  - C3: Constructor with a type Stream<Movie> as a parameter. It creates an object of the type Movies with the movies included in the given stream.
+  
+- Criterion of equality: Two objects of the type Movies are equal if their properties are.
+  
+- Other operations: 
+  - void addMovie(Movie m): It adds a movie to the object.
+  - void addMovies(List<Movie> ms): It adds all the movies from a list to the object.
+  - void deleteMovie(Movie m): It deletes the movie given as a parameter from the object.
+  - boolean existsPerfectUsersRating(): It returns true if there is any movie that has 10.0 as users rating in the object.
+  - Double getVoteAverage(): It returns the average of all the votes of the movies in the object.
+  - Movies filterByLanguage(Language l): It returns an object of the type Movies with the movies that are in the language that is received as a parameter.
+  - Map<String, List<Movie>> moviesByGenre(): It returns a map in which the keys are the genres of the movies (Which it is a property of the auxiliary type Sinopsis) and the values the movies that are of those genres.
+  - Map<String, Integer> getTotalVotesPerGenre(): It returns a map in which the keys are the genres of the movies and the values the sum of all the votes of the movies that are of those genres.
