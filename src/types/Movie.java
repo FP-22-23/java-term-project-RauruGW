@@ -13,7 +13,7 @@ public class Movie implements Comparable<Movie>{
 	private LocalDate releaseDate;
 	private Sinopsis sinopsis;
 	private String rating;
-	private Double users_rating;
+	private Double usersRating;
 	private Integer votes;
 	private Language lang;
 	private String director;
@@ -21,15 +21,15 @@ public class Movie implements Comparable<Movie>{
 	private Duration runtime;
 	
 	public Movie(String title, LocalDate releaseDate, Sinopsis sinopsis,
-			String rating, Double users_rating, Integer votes, Language lang,
+			String rating, Double usersRating, Integer votes, Language lang,
 			String director, List<String> actors, Duration runtime) {
 		Checkers.check("The movie must have a title", title != null);
-		Checkers.check("The user rating cannot be negative", users_rating >= 0);
+		Checkers.check("The user rating cannot be negative", usersRating >= 0);
 		this.title = title;
 		this.releaseDate = releaseDate;
 		this.sinopsis = sinopsis;
 		this.rating = rating;
-		this.users_rating = users_rating;
+		this.usersRating = usersRating;
 		this.votes = votes;
 		this.lang = lang;
 		this.director = director;
@@ -42,7 +42,7 @@ public class Movie implements Comparable<Movie>{
 		releaseDate = null;
 		sinopsis = null;
 		rating = null;
-		users_rating = null;
+		usersRating = null;
 		votes = null;
 		lang = null;
 		this.director = director;
@@ -66,8 +66,8 @@ public class Movie implements Comparable<Movie>{
 		return rating;
 	}
 
-	public Double getUsers_rating() {
-		return users_rating;
+	public Double getUsersRating() {
+		return usersRating;
 	}
 
 	public Integer getVotes() {
@@ -92,7 +92,7 @@ public class Movie implements Comparable<Movie>{
 	
 	public boolean getWellRated() {
 		boolean res = false;
-		if (getUsers_rating() >= 7.0) {
+		if (getUsersRating() >= 7.0) {
 			res = true;
 		}
 		return res;
@@ -101,7 +101,7 @@ public class Movie implements Comparable<Movie>{
 	@Override
 	public String toString() {
 		return "Movie [title=" + title + ", relDate=" + releaseDate + ", sinopsis=" + sinopsis + ", rating=" + rating
-				+ ", users_rating=" + users_rating + ", votes=" + votes + ", lang=" + lang + ", director=" + director
+				+ ", users_rating=" + usersRating + ", votes=" + votes + ", lang=" + lang + ", director=" + director
 				+ ", actors=" + actors + ", runtime=" + runtime + "]";
 	}
 
