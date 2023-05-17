@@ -41,5 +41,17 @@ public class TestMovies {
 		System.out.println(ms1.filterByLanguage(Language.DUTCH));
 		System.out.println(ms1.moviesByGenre());
 		System.out.println(ms1.getTotalVotesPerGenre());
+		
+		System.out.println(ms1.existsPerfectUsersRatingWithStreams());
+		System.out.println(ms1.getVoteAverageWithStreams());
+		System.out.println(ms1.filterByLanguageWithStreams(Language.DUTCH));
+		System.out.println(ms1.mostWellRatedMovieLanguage(Language.INDONESIAN));
+		System.out.println(ms1.filterByRatingSortedByReleaseDate("13+"));
+		
+		System.out.println(ms1.moviesByGenreWithStreams());
+		System.out.println(ms1.getTitlesGenre("Action"));
+		System.out.println(ms1.maxVotesByGenre());
+		System.out.println(ms1.nOldestMoviesByGenre(3));
+		System.out.println(ms1.mostWellRatedMovie());
 	}
 }

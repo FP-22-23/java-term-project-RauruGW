@@ -61,6 +61,10 @@ public class Movie implements Comparable<Movie>{
 	public Sinopsis getSinopsis() {
 		return sinopsis;
 	}
+	
+	public String getGenre() {
+		return sinopsis.getGenre();
+	}
 
 	public String getRating() {
 		return rating;
