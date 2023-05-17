@@ -84,3 +84,15 @@ Container type - Movies
   - Movies filterByLanguage(Language l): It returns an object of the type Movies with the movies that are in the language that is received as a parameter.
   - Map<String, List<Movie>> moviesByGenre(): It returns a map in which the keys are the genres of the movies (Which it is a property of the auxiliary type Sinopsis) and the values the movies that are of those genres.
   - Map<String, Integer> getTotalVotesPerGenre(): It returns a map in which the keys are the genres of the movies and the values the sum of all the votes of the movies that are of those genres.
+  - Boolean existsPerfectUsersRatingWithStreams(): The same as existsPerfectUsersRating() but using streams.
+  - Double getVoteAverageWithStreams(): The same as getVoteAverage() but using streams.
+  - Movies filterByLanguageWithStreams(Language l): The same as filterByLanguage(Language l) but using streams.
+  - Movie mostWellRatedMovieLanguage(Language l): It returns an object of the type Movie which is the movie with the highest users rating.
+  - Movies filterByRatingSortedByReleaseDate(String rating): It returns an object of the type Movies with the movies that have the rating that is received as a parameter sorted by its release date.
+  - Map<String, List<Movie>> moviesByGenreWithStreams(): The same moviesByGenreWithStreams() but using streams.
+  - SortedSet<String> getTitlesGenre(String genre): It returns a sorted set with the titles of the movies that are of the genre that is received as a parameter.
+  - Map<String,Integer> maxVotesByGenre(): It returns a map in which the keys are the genres of the movies and the values the maximun number of votes of that genre.
+  - SortedMap<String,List<Movie>> nOldestMoviesByGenre(Integer n): It returns a sorted map that shows the n oldest movies filtered by genre, being the keys of the map the genres of the movie, and the values a list with the n oldest movies of that genre.
+  - List<Movie> nOldestMovies(List<Movie> m, Integer n): It returns a list with the n oldest movies from a list received as a parameter. This is an auxiliar method for the method
+  nOldestMoviesByGenre(Integer n).
+  - Map.Entry<String, Double> mostWellRatedMovie(): It returns an entry of the highest rated movie being the key the title of the movie and the value its users rating.
